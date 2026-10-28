@@ -1,0 +1,32 @@
+{
+  "_note": "Real response from GET /admin/promotions on 2026-07-05, trimmed. I read 'rules: []' and 'is_automatic: false' as 'no minimum quantity'. The rule lived in custom code instead, so BUG-11 was rejected. Kept here because it shows how the mistake happened.",
+  "promotions": [
+    {
+      "code": "VOL_5",
+      "is_automatic": false,
+      "status": "active",
+      "type": "percentage",
+      "value": 5,
+      "target_type": "order",
+      "rules": []
+    },
+    {
+      "code": "VOL_125",
+      "is_automatic": false,
+      "status": "active",
+      "type": "percentage",
+      "value": 12.5,
+      "target_type": "order",
+      "rules": []
+    },
+    {
+      "code": "VOL_75",
+      "is_automatic": false,
+      "status": "active",
+      "type": "percentage",
+      "value": 7.5,
+      "target_type": "order",
+      "rules": []
+    }
+  ]
+}

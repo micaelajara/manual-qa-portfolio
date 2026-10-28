@@ -74,7 +74,9 @@ El formulario debería limitar la cantidad de caracteres permitidos, y/o el resu
 
 Screenshot del checkout paso "delivery" (compartido 2026-07-05)
 
-[Re-test 2026-07-06] Sigue roto, NO corregido: Dirección/Contacto siguen aceptando texto sin límite y el texto largo se superpone visualmente entre columnas en el resumen de checkout real (sin ningún mensaje de error de validación). Screenshot: evidence/BUG-01-checkout-overflow-still-broken-2026-07-06.png
+[Re-test 2026-07-06] Sigue roto, NO corregido: Dirección/Contacto siguen aceptando texto sin límite y el texto largo se superpone visualmente entre columnas en el resumen de checkout real (sin ningún mensaje de error de validación). Screenshot: [evidence/BUG-01-checkout-overflow.png](evidence/BUG-01-checkout-overflow.png)
+
+![Texto largo de la dirección superpuesto con la columna Contacto](evidence/BUG-01-checkout-overflow.png)
 
 [Actualización 2026-07-06] Automatizado de punta a punta (login real + pedido real completado, Manual Payment sin cobro real): confirmado que el desborde se ve en la página de orden confirmada (/order/{id}/confirmed), no en el paso de Revisión del checkout (ahí el overflow queda contenido en su columna). scrollWidth (549) casi duplica clientWidth (284) en el párrafo de Dirección de envío — el texto se derrama sobre Contacto y Método. Test: tests/optica-global/checkout.spec.js (orden real #12).
 
@@ -356,7 +358,7 @@ Cada código debería tener una regla de cantidad mínima real (ej. 50/75/125 un
 
 **Evidencia y re-tests**
 
-respuesta real de la API guardada como evidencia (VOL-promotions-config-2026-07-05.json, repo privado) (respuesta real de la API)
+Respuesta real de la API: [evidence/BUG-11-promotions-config.json](evidence/BUG-11-promotions-config.json)
 
 [Actualización 2026-07-06] Rechazado por el equipo de desarrollo: los códigos VOL_* no son autoservicio — un subscriber los aplica automáticamente según la cantidad real de la orden; la validación de umbral vive en código custom (las reglas nativas de Medusa no pueden expresar "cantidad total >= N"). rules:[] es el comportamiento esperado, no un bug. Cascada: ver VOL-01, VOL-02, VOL-03, VOL-04, VOL-09, VOL-10 en Casos de prueba.
 
@@ -483,7 +485,7 @@ El cliente debería poder ingresar el código de referido antes o durante su pri
 
 Explicado y confirmado por Micaela en la conversación (2026-07-05)
 
-[Actualización 2026-07-06] Re-testeado tras un fix parcial: ahora SÍ existe un campo para ingresar el código de laboratorio durante el checkout (ya no hace falta pasar por Mi perfil), lo cual resuelve el problema original de timing. Pero el descuento sigue sin reflejarse: orden real #10 (cliente-de-prueba@yopmail.com, hoy) completada con discount_total=0 y promotions=[], y el customer de esa orden no tiene ningún laboratorio vinculado en su metadata. Los 2 laboratorios en /admin/labs siguen con active_optica_count=0. El vínculo cliente-laboratorio ingresado en checkout no se está persistiendo del lado del backend antes de completar la orden. Evidencia: respuesta real de la API guardada como evidencia (BUG-15-lab-discount-not-applied-2026-07-06.json, repo privado). Sigue Abierto.
+[Actualización 2026-07-06] Re-testeado tras un fix parcial: ahora SÍ existe un campo para ingresar el código de laboratorio durante el checkout (ya no hace falta pasar por Mi perfil), lo cual resuelve el problema original de timing. Pero el descuento sigue sin reflejarse: orden real #10 (cliente-de-prueba@yopmail.com, hoy) completada con discount_total=0 y promotions=[], y el customer de esa orden no tiene ningún laboratorio vinculado en su metadata. Los 2 laboratorios en /admin/labs siguen con active_optica_count=0. El vínculo cliente-laboratorio ingresado en checkout no se está persistiendo del lado del backend antes de completar la orden. Evidencia: [evidence/BUG-15-lab-discount-not-applied.json](evidence/BUG-15-lab-discount-not-applied.json). Sigue Abierto.
 
 ---
 

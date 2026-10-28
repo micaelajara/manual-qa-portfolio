@@ -1,4 +1,4 @@
-# RebelMouse · Building QA from scratch
+# RebelMouse · QA for the enterprise accounts
 
 **Role:** QA Engineer and Technical Support · **When:** March 2022 to May 2026 · **Product:** SaaS B2B CMS for enterprise publishers and brands
 
@@ -6,11 +6,11 @@ No test cases or bug reports from this job are published here: they belong to th
 
 ## Context
 
-When I joined there was no QA process, so I built it. I worked with three QA colleagues in Russia, with the clients and most of the company in the US. Everything (tickets, meetings, documentation, client calls) happened in English.
+I was the QA for the company's enterprise accounts, the US clients with custom code and the most at stake on every release: Penske Truck Rental and J.J. Keller among them. Each QA at the company worked inside a different team; mine was the one serving those accounts, with the clients and most of the company in the US. Everything (tickets, meetings, documentation, client calls) happened in English.
 
-## What I built
+## How I worked
 
-- **Test cases** written from the tickets.
+- **Test cases** written from the tickets, for every feature and redesign on my accounts.
 - A **regression pass before every release**.
 - A **smoke test after every deploy** to production.
 - A **bug flow with development**: how bugs get reported, prioritized and retested.
@@ -38,6 +38,6 @@ The other half of the role. J.J. Keller, a compliance company, was an enterprise
 
 ## What I took from it
 
-- A process is only useful if the team actually uses it, so I built it around what developers and clients already did, not around a template.
+- A process is only useful if the team actually uses it, so I shaped my routines around what developers and clients already did, not around a template.
 - Severity comes from business impact. The same bug is critical on a booking flow and minor on a settings page.
 - Support and QA are the same job from two sides: both start with "what exactly is happening, and how do I prove it."

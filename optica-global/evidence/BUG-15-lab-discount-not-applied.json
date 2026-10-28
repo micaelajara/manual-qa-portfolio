@@ -1,0 +1,41 @@
+{
+  "_note": "Real API responses from the retest on 2026-07-06, trimmed. IDs, emails and the customer's tax ID were replaced with placeholders.",
+  "GET /admin/orders/{order_id}": {
+    "order": {
+      "id": "order_EXAMPLE",
+      "display_id": 10,
+      "email": "customer@example.com",
+      "status": "canceled",
+      "total": 459600,
+      "discount_total": 0,
+      "original_total": 459600,
+      "promotions": []
+    }
+  },
+  "GET /admin/customers/{customer_id}": {
+    "customer": {
+      "id": "cus_EXAMPLE",
+      "email": "customer@example.com",
+      "metadata": {
+        "dni_cuit": "<redacted>"
+      }
+    }
+  },
+  "GET /admin/labs": {
+    "labs": [
+      {
+        "name": "OpticaQA",
+        "referral_code": "<lab code>",
+        "total_earned": 0,
+        "active_optica_count": 0
+      },
+      {
+        "name": "QA Tier D",
+        "referral_code": "<lab code>",
+        "total_earned": 0,
+        "active_optica_count": 0
+      }
+    ],
+    "count": 2
+  }
+}

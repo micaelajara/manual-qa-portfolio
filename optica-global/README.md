@@ -10,6 +10,8 @@ This is the real plan I wrote and ran, exported from the spreadsheet I work in. 
 | [`test-cases.md`](test-cases.md) | All 111 cases by area, with steps, expected result, priority, type, status and linked bug |
 | [`test-cases.csv`](test-cases.csv) | The same table, to open in a spreadsheet |
 | [`bug-reports.md`](bug-reports.md) | All 23 bug reports with environment, steps, actual vs. expected, evidence and dated retests |
+| [`api-testing.md`](api-testing.md) | How I used the real API to check what the screen doesn't show: business rules, concurrency, backend confirmation, Admin guardrails |
+| [`evidence/`](evidence/) | A cleaned sample of the real evidence: a screenshot and API responses |
 | [`improvements.md`](improvements.md) | 3 product suggestions, kept apart from the bugs |
 
 ## How the plan was built
@@ -40,7 +42,7 @@ That turned generic cases ("apply a coupon," "pay with a card") into cases that 
 | Referrals | 8 | 1 | 1 | | 6 |
 | **Total** | **111** | **66** | **17** | **18** | **10** |
 
-**How they were run:** 47 by hand in the browser, 41 against the real API (to confirm in the backend what the screen doesn't show), 13 automated with Playwright. The automated ones are in [optica-global-playwright-tests](https://github.com/micaelajara/optica-global-playwright-tests).
+**How they were run:** 47 by hand in the browser, 41 against the real API ([how and why](api-testing.md)), 13 automated with Playwright. The automated ones are in [optica-global-playwright-tests](https://github.com/micaelajara/optica-global-playwright-tests).
 
 **Blocked doesn't mean skipped.** Every blocked case says why: a scenario that doesn't apply to a wholesale business, a catalog too small to have a second page, an order already delivered that can't be cancelled. Seven of them are volume discount cases whose premise turned out to be wrong (more on that below).
 

@@ -1,0 +1,15 @@
+{
+  "_note": "Real error responses from the Admin API on 2026-07-05. These are the system doing the right thing: each one blocked an action that should be blocked.",
+  "AD-04 · POST /admin/orders/{id}/credit-lines": {
+    "type": "invalid_data",
+    "message": "Can only create credit lines if the order has a positive or negative pending difference"
+  },
+  "AD-06 · POST /admin/orders/{id}/cancel (order with an active fulfillment)": {
+    "type": "not_allowed",
+    "message": "All fulfillments must be canceled before canceling an order"
+  },
+  "AD-06 · POST /admin/orders/{id}/fulfillments/{id}/cancel (already shipped)": {
+    "type": "not_allowed",
+    "message": "The fulfillment has already been shipped. Shipped fulfillments cannot be canceled"
+  }
+}
